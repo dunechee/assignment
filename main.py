@@ -20,7 +20,7 @@ def application():
         rows = cur.fetchall()
     except sqlite3.Error as error:
         # log error message and display to user
-        print("Error connecting to the playstore database", error)
+        print("Error connecting to the playstore database:", error)
         return "Error connecting to the playstore database"
     finally:
         conn.close()
@@ -39,7 +39,7 @@ def developer():
         rows = cur.fetchall()
     except sqlite3.Error as error:
         # log error message and display to user
-        print("Error connecting to the playstore database", error)
+        print("Error connecting to the playstore database:", error)
         return "Error connecting to the playstore database"
     finally:
         conn.close()
@@ -60,7 +60,7 @@ def review():
         rows = cur.fetchall()
     except sqlite3.Error as error:
         # log error message and display to user
-        print("Error connecting to the playstore database", error)
+        print("Error connecting to the playstore database:", error)
         return "Error connecting to the playstore database"
     finally:
         conn.close()
@@ -80,8 +80,8 @@ def ratings(id):
         print(f"The rating for app {id} is {rating}")
     except sqlite3.Error as error:
         # log error message and display to user
-        print("Error retrieving app rating", error)
-        return "Sorry, error retrieving apo rating"
+        print("Error retrieving app rating:", error)
+        return "Sorry, error retrieving app rating"
     finally:
         conn.close()
     return render_template('result.html', rating=rating)
