@@ -75,8 +75,8 @@ def ratings(id):
         conn.row_factory = sqlite3.Row
         cur = conn.cursor()
         # get results from customers
-        cur.execute('SELECT app_rating FROM app WHERE app_id = ?', (id,))
-        rating = cur.fetchone()[0]
+        cur.execute('SELECT * FROM ratings_reviews WHERE app_id = ?', (id,))
+        rating = cur.fetchall
         print(f"The rating for app {id} is {rating}")
     except sqlite3.Error as error:
         # log error message and display to user
@@ -84,7 +84,7 @@ def ratings(id):
         return "Sorry, error retrieving app rating"
     finally:
         conn.close()
-    return render_template('result.html', rating=rating)
+    return render_template('review.html', rating=rating)
 
 
 if __name__ == '__main__':

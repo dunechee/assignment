@@ -1,0 +1,13 @@
+* e62fcbe : requirements
+* 6d389ce : Update README.md
+* 19f4e91 : Update README.md
+* c70518c : Update README.md
+* c9b9133 : Update README.md
+*   fc135c6 : Merge branch 'main' of https://github.com/dunechee/playstore_app
+|\  
+| * 8cbf099 : Update README.md
+* | 001343d : tests+html
+|/  
+* 1338515 : error handling
+* f180efc : code+templates+db
+* 91fbfda : Initial commit
